@@ -1,91 +1,137 @@
 body {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 .nav {
-    background-color: #EEEEEE;
+  background-color: #eeeeee;
 }
 .price {
-    font-size: .7em;
-    border: 1px solid #ccc;
-    -webkit-border-radius: .25em;
-    -moz-border-radius: .25em;
-    border-radius: .25em;
-    padding: 1px 3px;
+  font-size: 0.7em;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  border-radius: 0.25em;
+  padding: 1px 3px;
 }
 span.pic {
-    color: orange;
-    font-size: smaller;
+  color: orange;
+  font-size: smaller;
 }
 .time {
-    font-size: 0.7em;
-    line-height: 1em;
-    padding: 1px;
-    color: gray;
-    vertical-align: middle;
+  font-size: 0.7em;
+  line-height: 1em;
+  padding: 1px;
+  color: gray;
+  vertical-align: middle;
 }
 .listing-list {
-    margin-left: 50px;
-    margin-top: 10px;
-    font-size: 1.5em;
-
+  margin-left: 50px;
+  margin-top: 10px;
+  font-size: 1.5em;
 }
 .posting .postingtitle {
-    font-family: "Bitstream Vera Serif","Times New Roman",serif;
-    font-size: 1.4em;
-    font-weight: bold;
-    line-height: 1.4em;
-    margin: 10px 0;
-    clear: left;
+  font-family: "Bitstream Vera Serif", "Times New Roman", serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  line-height: 1.4em;
+  margin: 10px 0;
+  clear: left;
 }
 .postinfo {
-    display: inline-block;
-    font-size: .75em;
-    margin-right: 30px;
+  display: inline-block;
+  font-size: 0.75em;
+  margin-right: 30px;
 }
 .timel {
-    cursor: pointer;
-    border-bottom: 1px dotted #999;
-    zoom: 1;
+  cursor: pointer;
+  border-bottom: 1px dotted #999;
+  zoom: 1;
 }
 .tsb ul {
-    margin-left: 20px;
-    list-style-type: disc;
+  margin-left: 20px;
+  list-style-type: disc;
 }
 .tsb {
-    border: 1px solid #eee;
-    padding: 5px 8px;
-    font-size: small;
-    display: block;
+  border: 1px solid #eee;
+  padding: 5px 8px;
+  font-size: small;
+  display: block;
 }
 .mapAndAttrs {
-    float: right;
-    margin-left: 1em;
-    margin-top: 5em;
-    vertical-align: top;
-    width: 280px;
+  float: right;
+  margin-left: 1em;
+  margin-top: 5em;
+  vertical-align: top;
+  width: 280px;
 }
 .tumbnail {
-    height: 125px;
+  height: 125px;
 }
 .thumb-parent {
-    position: relative;
+  position: relative;
 }
 .thumb-text {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .thumb-text p {
-    margin-left: 250px;
-    font-size: 1.5em;
+  margin-left: 250px;
+  font-size: 1.5em;
 }
 #thumb {
-    display: none;
+  display: none;
 }
 #grid {
-    display: none;
+  display: none;
 }
 #searchform {
-    margin-top: 4px;
-    margin-right: 5px;
+  margin-top: 4px;
+  margin-right: 5px;
+}
+
+.panelfloat {
+  float: left;
+  width: 200px;
+  margin: 10px;
+}
+
+.panelclear {
+  clear: left;
+}
+
+.trail1home {
+  font-weight: bold;
+}
+
+.clbody {
+  margin: 0;
+  width: 100%;
+}
+
+.clcategory {
+  text-align: center;
+  padding: 2px 5px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #eee;
+}
+
+.clcategorytitle {
+  font-weight: bold;
+}
+
+.clsidebar {
+  width: 15%;
+  height: 800px;
+  background-color: #eee;
+}
+
+.clsidebar-left {
+  float: left;
+  margin-left: 0px;
+}
+
+.clsidebar-right {
+  float: right;
+  margin-right: 0px;
 }

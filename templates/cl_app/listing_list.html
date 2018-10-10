@@ -2,66 +2,69 @@
 {% load staticfiles %}
 
 {% block body %}
-    <h1>
-        {% if city %}
-            {{ city }} >
-        {% else %}
-            All Cities >
-        {% endif %}
-        {% if category %}
-            {{ category }}
-        {% else %}
-            All item's
-        {% endif %}
-    </h1>
-    {% if user.is_authenticated %}
-    {% if category %}
-    <a class="btn btn-success"href="{% url 'listing_create_view' category.pk %}">Add New Listing</a>
-    {% endif %}
+LISTING LIST
+<h1>
+    {% if city %}
+    {{ city }} >
     {% else %}
-    <a href="{% url 'login' %}">Login to post a listing.</a>
+    All Cities >
     {% endif %}
-    <br>
-    <br>
-
-    {% if not search %}
-    <div class="btn-group pull-left" role="group">
-        <a href="{% url 'city_category_list_view' city_id category_id %}?sort=-created"  class="btn btn-default">Sort: Date</a>
-        <a href="{% url 'city_category_list_view' city_id category_id %}?sort=price"  class="btn btn-default">Sort: Price Low/High</a>
-        <a href="{% url 'city_category_list_view' city_id category_id %}?sort=-price"  class="btn btn-default">Sort: Price High/Low</a>
-    </div>
+    {% if category %}
+    {{ category }}
+    {% else %}
+    All item's
     {% endif %}
+</h1>
+{% if user.is_authenticated %}
+{% if category %}
+<a class="btn btn-success" href="{% url 'listing_create_view' category.pk %}">Add New Listing</a>
+{% endif %}
+{% else %}
+<a href="{% url 'login' %}">Login to post a listing.</a>
+{% endif %}
+<br>
+<br>
 
-    {# Yeah, I think isn't quite the ideal way to impliment this, lots of repetition #}
-    <div class="btn-group pull-right" role="group">
-        <a href="#" id="listb" class="btn btn-default">List</a>
-        <a href="#" id="gridb" class="btn btn-default">Grid</a>
-        <a href="#" id="thumbb" class="btn btn-default">Thumbnails</a>
+{% if not search %}
+<div class="btn-group pull-left" role="group">
+    <a href="{% url 'city_category_list_view' city_id category_id %}?sort=-created" class="btn btn-default">Sort: Date</a>
+    <a href="{% url 'city_category_list_view' city_id category_id %}?sort=price" class="btn btn-default">Sort: Price
+        Low/High</a>
+    <a href="{% url 'city_category_list_view' city_id category_id %}?sort=-price" class="btn btn-default">Sort: Price
+        High/Low</a>
+</div>
+{% endif %}
+
+{# Yeah, I think isn't quite the ideal way to impliment this, lots of repetition #}
+<div class="btn-group pull-right" role="group">
+    <a href="#" id="listb" class="btn btn-default">List</a>
+    <a href="#" id="gridb" class="btn btn-default">Grid</a>
+    <a href="#" id="thumbb" class="btn btn-default">Thumbnails</a>
+</div>
+{# start content #}
+<br>
+<br>
+{# list #}
+<div class="row" id="list">
+    {% for item in object_list %}
+    <div class="item listing-list">
+        <p><small>&#9734;</small>
+            <span class="time">{{ item.created|date:"N d" }} </span>
+            <a href="{% url 'listing_detail_view' item.pk %}">{{ item.title }} </a>
+            <span class="price">${{ item.price }}</span>
+            <small>({{ item.listing_city }}) </small>
+            {% if item.photo %}
+            <span class="pic">pic</span>
+            {% endif %}
+        </p>
     </div>
-    {# start content #}
-    <br>
-    <br>
-    {# list #}
-    <div class="row" id="list">
-        {% for item in object_list %}
-        <div class="item listing-list">
-            <p><small>&#9734;</small>
-                <span class="time">{{ item.created|date:"N d" }} </span>
-                <a href="{% url 'listing_detail_view' item.pk %}">{{ item.title }} </a>
-                <span class="price">${{ item.price }}</span>
-                <small>({{ item.listing_city }}) </small>
-                {% if item.photo %}
-                <span class="pic">pic</span>
-                {% endif %}
-            </p>
-        </div>
-        {% empty %}
-            <h4>Sorry, no items in this list.</h4>
-        {% endfor %}
-    </div>
-    <br>
-    {# grid #}
-    <div class="row" id="grid">
+    {% empty %}
+    <h4>Sorry, no items in this list.</h4>
+    {% endfor %}
+</div>
+<br>
+{# grid #}
+<div class="row" id="grid">
     {% for item in object_list %}
     <div class="item col-md-4">
         <div class="thumbnail">
@@ -76,11 +79,11 @@
         </div>
     </div>
     {% empty %}
-        <h4>Sorry, no items in this list.</h4>
+    <h4>Sorry, no items in this list.</h4>
     {% endfor %}
-    </div>
-    {# thumbnail #}
-    <div id="thumb">
+</div>
+{# thumbnail #}
+<div id="thumb">
     {% for item in object_list %}
     <div class="panel panel-default">
         <div class="row">
@@ -100,9 +103,9 @@
         </div>
     </div>
     {% empty %}
-        <h4>Sorry, no items in this list.</h4>
+    <h4>Sorry, no items in this list.</h4>
     {% endfor %}
-    </div>
+</div>
 
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
